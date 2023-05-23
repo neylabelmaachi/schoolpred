@@ -2,6 +2,7 @@
 .csv
 raw_data/
 .DS_Store
+.python-version
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
