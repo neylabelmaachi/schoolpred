@@ -5,11 +5,11 @@ import pandas as pd
 BASELINE_COLS = {
     "hhid": "hhid",
     # Parents
-    "gendercode":"Gender",
-    "a7_1": "Mother still living",
-    "a10_1": "Father still living",
-    "a13_1": "Age, in years",
-    "a18_1": "Marital Status",
+    "gendercode":"gender",
+    "a7_1": "mother_alive",
+    "a10_1": "father_alive",
+    "a13_1": "parents_age",
+    "a18_1": "marital_status",
     # Parents Education
     "a14_1_1": "darija",
     "a14_1_2": "class_arabic",
@@ -22,7 +22,7 @@ BASELINE_COLS = {
     "a16_1": "work_activity",
     # Housing
     "im1": "number_of_person_in_hh",
-    "b3_1": "type_of_housing",
+    "b3_1": "type_housing",
     "b10_29": "automobiles",
     "b10_20": "mobile_phones",
     "b10_4": "satellite_receivers",
