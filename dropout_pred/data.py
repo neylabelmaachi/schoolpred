@@ -57,6 +57,11 @@ class DropoutPred:
     
     @classmethod
     def get_data(cls):
+        """
+        Returns a python dict
+        keys are the filenames without suffixes and prefixs
+        values are pandas DataFrames loaded from CSV files
+        """
         abs_path = os.path.dirname(__file__)
         csv_path = os.path.join(abs_path, "..", "raw_data")
     
@@ -93,6 +98,11 @@ class DropoutPred:
     
     @classmethod
     def get_training_data(cls, done_test=False):
+        """
+        Returns a DataFrame with columns from
+        Math test results and Baseline household data
+        and renames encoded columns
+        """
         data = cls.get_data()
         baseline_household = data["baseline_household"].copy()
         test_results = data["child_math_test_results"].copy()   
