@@ -1,5 +1,5 @@
 # Don't want to push big csv files
-.csv
+*.csv
 raw_data/
 .DS_Store
 
