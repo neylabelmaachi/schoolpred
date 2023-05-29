@@ -28,7 +28,7 @@
 - `mother_alive` - {'Yes': 1, 'No': 2}
 - `father_alive` - {'Yes': 1, 'No': 2}
 - `parents_age` in years
-- `marital_status` = {1:'Married', 2:'Single', 3:'Divorced', 4:'Widowed'}
-- `parents_level_ed` = {1:'No education', 2:'Religious', 3:'Primary School', 4:'Middle School', 5:'High School', 6:'Higher Education', 7:'Professional Training'}
-- `work_activity` = {1:'Full Time', 2:'Part Time', 3:'Unemployed'}
-- `type_housing` =  {1: 'Adobe/Clay house', 2:'Permanent House', 3:'Dry Stone', 4:'Modern/Concrete house', 5:'Other'}
+- `marital_status` = {1:Married, 2:Single, 3:Divorced, 4:Widowed}
+- `parents_level_ed` = {1:No education, 2:Religious, 3:Primary School, 4:Middle School, 5:High School, 6:Higher Education, 7:Professional Training}
+- `work_activity` = {1:Full Time, 2:Part Time, 3:Unemployed}
+- `type_housing` =  {1:Adobe/Clay house, 2:Permanent House, 3:Dry Stone, 4:Modern/Concrete house, 5:Other}
