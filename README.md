@@ -1,6 +1,6 @@
 
 <div align="center">
-<h1>School Dropout Prediction</h1>
+<h1>School Dropout Prediction 🎓</h1>
 </div>
 
 ## DB Schema
