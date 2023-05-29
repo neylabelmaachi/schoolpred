@@ -16,7 +16,7 @@
  - `number_recognition` - Number recognition test results
  - `subtraction_res` - Subtraction test results
  - `division_res` - Division test resuls
- - 'average_math_score' - Average score of the 4 math test sections mentioned above 
+ - `average_math_score` - Average score of the 4 math test sections mentioned above 
 
 
 <center>
