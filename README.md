@@ -19,9 +19,11 @@
  - `average_math_score` - Average score of the 4 math test sections mentioned above 
 
 
-<center>
+<div align="center">
+
 <h1>Reference Key</h1>
-</center>
+
+</div>
 
 ### Reference Key 
 **features**
