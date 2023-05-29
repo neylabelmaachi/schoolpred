@@ -9,7 +9,7 @@
  - `individual_water_net` - Individual water network connection
  - `electrical_net` - Electric connection
  - `mobile_phones` - If the family have a mobile phone or not
- - 'type_housing' - The architectural structure of the house 
+ - `type_housing` - The architectural structure of the house 
 
 **child_math_test_result**
  - `digit_recognition_res` - Digit recognition test results
