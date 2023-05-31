@@ -34,3 +34,31 @@
 - `parents_level_ed` - {1:No education, 2:Religious, 3:Primary School, 4:Middle School, 5:High School, 6:Higher Education, 7:Professional Training}
 - `work_activity` - {1:Full Time, 2:Part Time, 3:Unemployed}
 - `type_housing` -  {1:Adobe/Clay house, 2:Permanent House, 3:Dry Stone, 4:Modern/Concrete house, 5:Other}
+
+| Variable Name   | Encoded Numbers | Description |
+|-----------------|------|-------------|
+| mother_alive    | 1    | Yes         |
+|                 | 2    | No          |
+| father_alive    | 1    | Yes         |
+|                 | 2    | No          |
+| parents_age     | -    | Age in Years|
+| marital_status  | 1    | Married     |
+|                 | 2    | Single      |
+|                 | 3    | Divorced    |
+|                 | 4    | Widowed     |
+| parents_level_ed| 1    | No education|
+|                 | 2    | Religious education|
+|                 | 3    | Primary School|
+|                 | 4    | Middle School|
+|                 | 5    | High School|
+|                 | 6    | Higher Education|
+|                 | 7    | Professional Training|
+| work_activity   | 1    | Full Time|
+|                 | 2    | Part Time|
+|                 | 3    | Unemployed|
+| type_housing    | 1    | Adobe/Clay house|
+|                 | 2    | Permanent House|
+|                 | 3    | Dry Stone|
+|                 | 4    | Modern/Concrete house|
+|                 | 5    | Other|
+
