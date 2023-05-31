@@ -26,7 +26,6 @@
 </div>
 
 ### Reference Key 
-**features**
 
 | Variable Name   | Encoded Numbers | Description |
 |-----------------|------|-------------|
