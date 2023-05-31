@@ -28,7 +28,7 @@ st.title('Primary School Dropout Predictor')
 st.write("Please upload a CSV file with classroom data to predict the probability of student dropout.")
 
 dir_path = os.path.dirname(__file__)
-model_path = os.path.join(dir_path, '../model/cat_pipeline_2.joblib')
+model_path = os.path.join(dir_path, '../../model/cat_pipeline_2.joblib')
 
 cat_pipeline_model = load(model_path)
 
