@@ -25,8 +25,6 @@
 <h1>Reference Key</h1>
 </div>
 
-### Reference Key 
-
 | Variable Name   | Encoded Numbers | Description |
 |-----------------|------|-------------|
 | mother_alive    | 1    | Yes         |
