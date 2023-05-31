@@ -3,12 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
 import seaborn as sns
-# from pandas.api.types import (
-#     is_categorical_dtype,
-#     is_datetime64_any_dtype,
-#     is_numeric_dtype,
-#     is_object_dtype,
-# )
 
 # Utils
 import io
@@ -32,7 +26,6 @@ model_path = os.path.join(dir_path, '../../model/cat_pipeline_2.joblib')
 
 cat_pipeline_model = load(model_path)
 
-# cat_pipeline_model = load('model/cat_pipeline_2.joblib')
 data = None
 figure_list = []
 
