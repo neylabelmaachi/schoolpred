@@ -19,7 +19,7 @@ cat_pipeline_model = load(model_path)
 
 page = st.sidebar.selectbox(
     'Select Your Analysis Task:',
-    ['🏠 Home', '📎 Upload your file', '✍️ Input Data Manually']
+    ['🏠 Home', '📎 Upload classroom file', '✍️ Enter Individual Student Data']
 )
 
 if page == '🏠 Home':
@@ -89,7 +89,7 @@ if page == '🏠 Home':
     ))
 
 
-elif page == '📎 Upload your file':
+elif page == '📎 Upload classroom file':
     # Uploading a CSV file
     uploaded_files = st.file_uploader("Upload a CSV file", type="csv", accept_multiple_files=False)
 
@@ -120,7 +120,7 @@ elif page == '📎 Upload your file':
         print(predictions)
         st.dataframe(predictions)
 
-elif page == '✍️ Input Data Manually':
+elif page == '✍️ Enter Individual Student Data':
 # Inputing individual student data
     with st.form(key='params_for_api'):
 
