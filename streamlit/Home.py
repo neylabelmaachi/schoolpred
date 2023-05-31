@@ -12,7 +12,13 @@ st.set_page_config(
 )
 
 st.title('Primary School Dropout Predictor')
-st.write("Please upload a CSV file with classroom data to predict the probability of student dropout.")
+st.write("""This tool has been built in order to prevent primary school dropout in high-risk rural regions of Morocco.
+        Our prediction model has been trained on the following research dataset:
+        Data for Development Initiative. (2019). Morocco CCT Education (Version 1.0)
+        [Data set]. Redivis. https://redivis.com/datasets/11xy-bb1z6q7ap?v=1.0""")
+
+st.title('Identifying and preventing risks')
+st.write("Please upload a CSV file with classroom data or manually input individual student data to predict the probability of school dropout.")
 
 data = {
     'province': ['Khenifra', 'Taroudant', 'Taourirt', 'Ouarzazate', 'Azilal',

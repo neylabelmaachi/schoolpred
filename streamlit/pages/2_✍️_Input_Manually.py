@@ -26,10 +26,7 @@ model_path = os.path.join(dir_path, '../../model/cat_pipeline_2.joblib')
 
 cat_pipeline_model = load(model_path)
 
-# cat_pipeline_model = load('model/cat_pipeline_2.joblib')
-
 st.set_page_config(page_title="Input Manually", page_icon="✍️")
-
 
 def get_recommendation(data):
         recommendations = []
@@ -119,8 +116,6 @@ with st.form(key='params_for_api'):
         # 1 - Dropout, 0 - enrolled
         # st.warning('This is a warning')
         # st.write(f'The predicted class is {prediction}')
-        st.write(prediction)
-        
         if prediction == 1:
             st.error('The student is predicted to drop out.')
             recommendations = get_recommendation(data)
