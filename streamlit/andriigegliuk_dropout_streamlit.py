@@ -1,7 +1,5 @@
 
 import os
-=======
->>>>>>> 1d13c19fdfc4397882f09782ff4fa6024599f9ba
 import streamlit as st
 import pandas as pd
 import numpy as np
