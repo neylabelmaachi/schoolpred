@@ -1,5 +1,3 @@
-# School Dropout Predict
-
 <div align="center">
 <h1>School Dropout Prediction 🎓</h1>
 </div>
