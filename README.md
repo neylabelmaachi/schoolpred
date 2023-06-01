@@ -5,7 +5,11 @@
 ## DB Schema
 <img width="748" alt="Screenshot 2023-05-29 at 10 48 38" src="https://github.com/neylabelmaachi/schoolpred/assets/37574368/9de5e612-48f2-4d28-8173-f568719d9338">
 
-### Key columns
+
+<div align="center">
+<h1>Key columns</h1>
+</div>
+
 **baseline_household**
  - `work_activity` - Work status of the parents
  - `individual_water_net` - Individual water network connection
