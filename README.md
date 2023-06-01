@@ -5,7 +5,9 @@
 This tool has been built in order to prevent primary school dropout in high-risk rural regions of Morocco.
 Student drop out can be identified as a pattern related to socio-economic backgrounds. It is a pressing issue in developing countries and it can be prevented when tackled early. Our analysis focus only on regios whre level of school dropout is high.
 
+<div align="center">
 <img width="567" alt="image" src="https://github.com/neylabelmaachi/schoolpred/assets/120349975/c98f9fe6-8e06-4541-a1b8-34ddfb028908">
+</div>
 
 ## Why do we care?
 * Higher unemployment rate; 
