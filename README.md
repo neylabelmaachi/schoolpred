@@ -1,6 +1,6 @@
 <div align="center">
 <h1>School Dropout Prediction 🎓</h1>
- <p>[Link to the app on Streamlit](https://lewagon-schooldropout.streamlit.app/)</p>
+<p>[Link to the app on Streamlit](https://lewagon-schooldropout.streamlit.app/)</p>
 </div>
 
 ## DB Schema
