@@ -126,7 +126,7 @@ def encode_df(df: pd.DataFrame) -> pd.DataFrame:
     }
     
     df["parents_age"] = df["parents_age"].fillna(0.0).astype(int)
-    df["number_of_person_in_hh"] = df["parents_age"].fillna(0.0).astype(int)
+    df["number_of_person_in_hh"] = df["number_of_person_in_hh"].fillna(0.0).astype(int)
     df["predictions"] = df["predictions"].fillna(0.0).astype(int)
 
     df = df.drop(columns=["work_activity"])
