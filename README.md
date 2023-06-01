@@ -2,6 +2,19 @@
 <h1>School Dropout Prediction 🎓</h1>
 </div>
 
+This tool has been built in order to prevent primary school dropout in high-risk rural regions of Morocco.
+Student drop out can be identified as a pattern related to socio-economic backgrounds. It is a pressing issue in developing countries and it can be prevented when tackled early. Our analysis focus only on regios whre level of school dropout is high.
+
+<img width="567" alt="image" src="https://github.com/neylabelmaachi/schoolpred/assets/120349975/c98f9fe6-8e06-4541-a1b8-34ddfb028908">
+
+## Why do we care?
+* Higher unemployment rate; 
+* increased poverty; 
+* out-of-school students;
+* increased violence
+
+Rural environment are often neglected by the government, the tool we want to build allows to raise awareness and easily identify at-risk students. 
+
 [Link to the app on Streamlit](https://lewagon-schooldropout.streamlit.app/)
 
 ## DB Schema
@@ -58,3 +71,7 @@
 |                 | 4    | Modern/Concrete house|
 |                 | 5    | Other|
 
+# Dataset
+
+Our prediction model has been trained on the following research dataset: Data for Development Initiative. (2019). Morocco CCT Education (Version 1.0) 
+[Data set](https://redivis.com/datasets/11xy-bb1z6q7ap?v=1.0)
