@@ -34,25 +34,43 @@ try:
     data = pd.read_csv(uploaded_file)
 except:
     st.write("CSV upload failed")
+    
+student_tab, summary_tab = st.tabs(["Students", "Summary"])
+
+if data is not None:
+    predictions = cat_pipeline_model.predict(data)
+    predicted_proba = cat_pipeline_model.predict_proba(data)
+    data["predictions"] = predictions
+    data["dropout_proba"] = predicted_proba[:, 1]
+    # Family Issue
+    data['recommendations'] = data.apply(lambda row: get_recommendation(row), axis=1)
 
 
-summary_tab, student_tab = st.tabs(["Summary", "Students"])
-
+with student_tab:
+    if data is not None:
+        st.header("Students")
+        # Encode Data frame
+        encoded = encode_df(data)
+        filtered_df = filter_dataframe(encoded)
+        st.dataframe(filtered_df)
+        
+        csv = convert_df(filtered_df)
+        st.download_button(
+            label="Download data as CSV",
+            data=csv,
+            file_name='students.csv',
+            mime='text/csv',
+        )
+        
 with summary_tab:
     st.header("Summary")
         
     if data is not None:
-        # Predict with the model 
-        predictions = cat_pipeline_model.predict(data)
-        predicted_proba = cat_pipeline_model.predict_proba(data)
-        data["predictions"] = predictions
-        data["dropout_proba"] = predicted_proba[:, 1]
-        # Family Issue
-        data['recommendations'] = data.apply(lambda row: get_recommendation(row), axis=1)
         # Dropout probability percentage
         fig_dropout = plt.figure()
+
         plt.title("Possible Dropout")
-        plt.pie(data['predictions'].value_counts(),  labels = ['Non-Dropout', 'Dropout'], explode = (0.1, 0.0), autopct='%1.2f%%', shadow = True)
+        plt.pie(data['predictions'].value_counts(),  labels = ['Graduate', 'Dropout'], explode = (0.1, 0.0), autopct='%1.2f%%', shadow = True)
         plt.legend()
         figure_list.append(fig_dropout)
         st.pyplot(fig_dropout)
@@ -63,7 +81,7 @@ with summary_tab:
         plt.xticks(rotation=45)
 
         sns.countplot(data=data, x="number_of_person_in_hh", hue="predictions")
-        plt.legend(title="Predictions", labels = ['Non-Dropout', 'Dropout'])
+        plt.legend(title="Predictions", labels = ['Graduate', 'Dropout'])
         plt.xlabel('Number of Household members')
         plt.ylabel('Number of Students')
 
@@ -76,7 +94,7 @@ with summary_tab:
         plt.xticks(ticks=[0,1], labels=['Yes', 'No'])
         plt.xlabel('Father Alive')
         plt.ylabel('Number of Students')
-        plt.legend(title="Predictions", labels = ['Non-Dropout', 'Dropout'])
+        plt.legend(title="Predictions", labels = ['Graduate', 'Dropout'])
 
         figure_list.append(fig_father)
         st.pyplot(fig_father)
@@ -87,7 +105,7 @@ with summary_tab:
         plt.xticks(ticks=[0,1], labels=['Yes', 'No'])
         plt.xlabel('Mother Alive')
         plt.ylabel('Number of Students')
-        plt.legend(title="Predictions", labels = ['Non-Dropout', 'Dropout'])
+        plt.legend(title="Predictions", labels = ['Graduate', 'Dropout'])
 
         figure_list.append(fig_mother)
         st.pyplot(fig_mother)
@@ -104,7 +122,7 @@ with summary_tab:
         data["marital_status_encoded"] = data["marital_status"].map(mar_status)
 
         sns.countplot(data=data, x="marital_status_encoded", hue="predictions")
-        plt.legend(title="Predictions", labels = ['Non-Dropout', 'Dropout'])
+        plt.legend(title="Predictions", labels = ['Graduate', 'Dropout'])
         plt.xlabel("Parent's Marital Status")
         plt.ylabel('Number of Students')
         
@@ -116,7 +134,7 @@ with summary_tab:
         fig_acad = plt.figure()
 
         sns.boxplot(data=data, x="predictions", y="average_math_score", order=[0,1])
-        plt.xticks(ticks=[0,1], labels=['Non-Dropout', 'Dropout'], rotation=24)
+        plt.xticks(ticks=[0,1], labels=['Graduate', 'Dropout'], rotation=24)
         plt.ylabel('Math Scores')
         
         figure_list.append(fig_acad)
@@ -142,7 +160,7 @@ with summary_tab:
         plt.xlabel('Work Status')
         plt.ylabel('Number of Students')
 
-        plt.legend(title="Predictions", labels = ['Non-Dropout', 'Dropout'])
+        plt.legend(title="Predictions", labels = ['Graduate', 'Dropout'])
 
         figure_list.append(fig_work_status)
         st.pyplot(fig_work_status)
@@ -153,7 +171,7 @@ with summary_tab:
         plt.xticks(ticks=[0,1], labels=['Yes','No'])
         plt.xlabel('Have Water at home')
         plt.ylabel('Number of Students')
-        plt.legend(title="Predictions", labels = ['Non-Dropout', 'Dropout'])
+        plt.legend(title="Predictions", labels = ['Graduate', 'Dropout'])
 
         figure_list.append(fig_water)
         st.pyplot(fig_water)
@@ -163,7 +181,7 @@ with summary_tab:
         plt.xticks(ticks=[0,1], labels=['Yes','No'])
         plt.xlabel('Have Electricity at home')
         plt.ylabel('Number of Students')
-        plt.legend(title="Predictions", labels = ['Non-Dropout', 'Dropout'])
+        plt.legend(title="Predictions", labels = ['Graduate', 'Dropout'])
 
         figure_list.append(fig_elec)
         st.pyplot(fig_elec)
@@ -173,7 +191,7 @@ with summary_tab:
         plt.xticks(ticks=[0,1], labels=['Yes','No'])
         plt.xlabel('Family have atleast 1 mobile phone at home')
         plt.ylabel('Number of Students')
-        plt.legend(title="Predictions", labels = ['Non-Dropout', 'Dropout'])
+        plt.legend(title="Predictions", labels = ['Graduate', 'Dropout'])
         
         figure_list.append(fig_mob_phone)
         st.pyplot(fig_mob_phone)
@@ -183,7 +201,7 @@ with summary_tab:
         plt.xticks(ticks=[0,1,2,3,4], labels=['Adobe','Permanent', 'Dry Stone', 'Modern', 'Other'])
         plt.xlabel('Type of house')
         plt.ylabel('Number of Students')
-        plt.legend(title="Predictions", labels = ['Non-Dropout', 'Dropout'])
+        plt.legend(title="Predictions", labels = ['Graduate', 'Dropout'])
 
         
         figure_list.append(fig_housing)
@@ -195,22 +213,5 @@ with summary_tab:
         pdf_buffer = generate_pdf(figure_list)
         
         pdf_buffer.seek(0)
-        st.download_button(label="Export_Report", data=pdf_buffer, file_name="summary.pdf", mime='application/octet-stream')
+        st.download_button(label="Export Report", data=pdf_buffer, file_name="summary.pdf", mime='application/octet-stream')
 
-
-with student_tab:
-    if data is not None:
-        st.header("Students")
-        # Encode Data frame
-        encoded = encode_df(data)
-        filtered_df = filter_dataframe(encoded)
-        st.dataframe(filtered_df)
-        
-        csv = convert_df(filtered_df)
-        st.download_button(
-            label="Download data as CSV",
-            data=csv,
-            file_name='students.csv',
-            mime='text/csv',
-        )
-        
