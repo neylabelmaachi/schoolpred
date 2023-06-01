@@ -15,7 +15,7 @@ Student drop out can be identified as a pattern related to socio-economic backgr
 * out-of-school students;
 * increased violence
 
-Rural environment are often neglected by the government, the tool we want to build allows to raise awareness and easily identify at-risk students. 
+Rural environment are often neglected by the government, the tool we created allows to raise awareness and easily identify at-risk students. 
 
 [Link to the app on Streamlit](https://lewagon-schooldropout.streamlit.app/)
 
