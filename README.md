@@ -1,7 +1,8 @@
 <div align="center">
 <h1>School Dropout Prediction 🎓</h1>
-<p>[Link to the app on Streamlit](https://lewagon-schooldropout.streamlit.app/)</p>
 </div>
+
+[Link to the app on Streamlit](https://lewagon-schooldropout.streamlit.app/)
 
 ## DB Schema
 <img width="748" alt="Screenshot 2023-05-29 at 10 48 38" src="https://github.com/neylabelmaachi/schoolpred/assets/37574368/9de5e612-48f2-4d28-8173-f568719d9338">
