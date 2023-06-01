@@ -120,6 +120,7 @@ def encode_df(df: pd.DataFrame) -> pd.DataFrame:
             4: "Modern/Concrete",
             5: "Other",
         },
+        "predictions": {1: "Dropout", 0: "Graduate"},
         "mobile_phones": {1: "Yes", 2: "No"},
         "individual_water_net": {1: "Yes", 2: "No"},
         "electrical_net_co": {1: "Yes", 2: "No"},
@@ -139,7 +140,7 @@ def convert_df(df: pd.DataFrame) -> str:
     return df.to_csv().encode('utf-8')
 
 
-def get_recommendation(row):
+def get_recommendation(row) -> list:
     recommendations = []
     
     # Family issues
