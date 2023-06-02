@@ -77,7 +77,9 @@ Rural environment are often neglected by the government, the tool we created all
 |                 | 4    | Modern/Concrete house|
 |                 | 5    | Other|
 
-# Dataset
+<div align="center">
+<h1>Dataset</h1>
+</div>
 
 Our prediction model has been trained on the following research dataset: Data for Development Initiative. (2019). Morocco CCT Education (Version 1.0) 
 [Data set](https://redivis.com/datasets/11xy-bb1z6q7ap?v=1.0)
