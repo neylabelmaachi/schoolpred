@@ -118,6 +118,8 @@ with st.form(key='params_for_api'):
         # st.warning('This is a warning')
         # st.write(f'The predicted class is {prediction}')
         if prediction == 1:
+            with st.spinner('Wait for it...'):
+                time.sleep(3)
             st.error('The student is predicted to drop out.')
             recommendations = get_recommendation(data)
             if recommendations:
@@ -127,5 +129,7 @@ with st.form(key='params_for_api'):
             else:
                 st.write("No recommendations available for the given inputs.")
         else:
+            with st.spinner('Wait for it...'):
+                time.sleep(3)
             st.success('The student will graduate.')
 
