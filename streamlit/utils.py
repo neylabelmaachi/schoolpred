@@ -136,7 +136,7 @@ def encode_df(df: pd.DataFrame) -> pd.DataFrame:
     return df.replace(cleanup_nums)
 
 
-def convert_df(df: pd.DataFrame) -> str:
+def convert_df_to_csv(df: pd.DataFrame) -> str:
     return df.to_csv().encode('utf-8')
 
 
@@ -161,3 +161,10 @@ def generate_pdf(figure_list: list) -> io:
             pdf.savefig(fig)
             plt.close(fig)
     return buffer
+
+
+def style_predictions(pred: str) -> pd.io.formats.style.Styler:
+    if pred == "Graduate":
+        return 'background-color: green'
+
+    return 'background-color: red'

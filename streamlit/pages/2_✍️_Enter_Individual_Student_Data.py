@@ -21,6 +21,7 @@ from catboost import CatBoostClassifier
 # Streamlit
 import streamlit as st
 
+
 dir_path = os.path.dirname(__file__)
 model_path = os.path.join(dir_path, '../../model/cat_pipeline_2.joblib')
 

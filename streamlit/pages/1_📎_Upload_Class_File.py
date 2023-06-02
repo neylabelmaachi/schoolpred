@@ -51,16 +51,21 @@ with student_tab:
         st.header("Students")
         # Encode Data frame
         encoded = encode_df(data)
-        filtered_df = filter_dataframe(encoded)
+        styled_df = encoded.style.applymap(style_predictions, subset=['predictions'])
+
+        filtered_df = filter_dataframe(styled_df)
         st.dataframe(filtered_df)
+
+        # Create the "Download data as CSV" button
+        if st.button("Download data as CSV"):
+            csv_data = convert_df_to_csv(filtered_df)
+            st.download_button(
+                label="Click here to download",
+                data=csv_data,
+                file_name='students.csv',
+                mime='text/csv'
+            )
         
-        csv = convert_df(filtered_df)
-        st.download_button(
-            label="Download data as CSV",
-            data=csv,
-            file_name='students.csv',
-            mime='text/csv',
-        )
         
 with summary_tab:
     st.header("Summary")
