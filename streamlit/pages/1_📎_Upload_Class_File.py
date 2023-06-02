@@ -51,28 +51,24 @@ with student_tab:
         st.header("Students")
         # Encode Data frame
         encoded = encode_df(data)
-        styled_df = encoded.style.applymap(style_predictions, subset=['predictions'])
 
-        filtered_df = filter_dataframe(styled_df)
-        st.dataframe(filtered_df)
-
-        # Create the "Download data as CSV" button
-        if st.button("Download data as CSV"):
-            csv_data = convert_df_to_csv(filtered_df)
-            st.download_button(
-                label="Click here to download",
-                data=csv_data,
-                file_name='students.csv',
-                mime='text/csv'
-            )
+        filtered_df = filter_dataframe(encoded)
+        st.dataframe(filtered_df.style.applymap(style_predictions, subset=["predictions"]))
         
+        st.download_button(
+            label="Download data as CSV",
+            data=convert_df_to_csv(filtered_df),
+            file_name='students.csv',
+            mime='text/csv'
+        )
+
         
 with summary_tab:
-    st.header("Summary")
-        
     if data is not None:
+        st.header("Summary")
+
         # Dropout probability percentage
-        fig_dropout = plt.figure()
+        fig_dropout = plt.figure(figsize=(10,6))
 
         plt.title("Possible Dropout")
         plt.pie(data['predictions'].value_counts(),  labels = ['Graduate', 'Dropout'], explode = (0.1, 0.0), autopct='%1.2f%%', shadow = True)

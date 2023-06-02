@@ -165,6 +165,6 @@ def generate_pdf(figure_list: list) -> io:
 
 def style_predictions(pred: str) -> pd.io.formats.style.Styler:
     if pred == "Graduate":
-        return 'background-color: green'
+        return 'background-color: #0B6E4F'
 
-    return 'background-color: red'
+    return 'background-color: #fb3640'
